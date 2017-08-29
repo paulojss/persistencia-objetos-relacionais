@@ -31,6 +31,7 @@ public class Produto {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,
 			generator = "produto_seq")
+	@Column(name = "produto_id")
 	private long id;
 	
 	@Column
@@ -44,7 +45,7 @@ public class Produto {
 	
 	@ManyToMany
 	@JoinTable(name = "produto_pedido", joinColumns = @JoinColumn(name = "produto_id"),
-			inverseJoinColumns = @JoinColumn(name = "pedido_id"))
+			inverseJoinColumns = @JoinColumn(name = "numero"))
 	private List<Pedido> pedidos;
 	
 	@ManyToMany(mappedBy = "produtos")

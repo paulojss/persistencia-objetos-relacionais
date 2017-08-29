@@ -23,6 +23,7 @@ public class Fornecedor {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,
 			generator = "fornecedor_seq")
+	@Column(name = "fornecedor_id")
 	private long codigo;
 	
 	@Column
